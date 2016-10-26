@@ -239,21 +239,17 @@ class MkDocs {
         $retVal = 0;
         chdir($this->rootPath);
 
-        $mkdocs = shell_exec('which mkdocs');
-        if ($mkdocs != null) {
-            $mkdocs = trim($mkdocs);
-            // 2>&1 will make exec able to print errors
-            exec($mkdocs . ' build --clean 2>&1', $result, $retVal);
+        // TODO: more compatibilities
+        $mkdocs = '/usr/local/bin/mkdocs';
 
-            if ($retVal === 0) {
-                return true;
-            }
-            else {
-                return $result;
-            }
+        // 2>&1 will make exec able to print errors
+        exec($mkdocs . ' build --clean 2>&1', $result, $retVal);
+
+        if ($retVal === 0) {
+            return true;
         }
         else {
-            return 'mkdocs command not found on the system';
+            return $result;
         }
     }
 }
