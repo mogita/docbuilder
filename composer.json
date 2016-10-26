@@ -1,0 +1,25 @@
+{
+    "name": "mogita/docbuilder",
+    "description": "Tool for making config files for documentations generators like MkDocs and build the docs.",
+    "keywords": ["mkdocs", "documentation", "generator"],
+    "homepage": "http://github.com/mogita/docbuilder",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "mogita",
+            "homepage": "http://mogita.com/"
+        }
+    ],
+    "support": {
+        "email": "me@mogita.com"
+    },
+    "require": {
+        "php": ">=5.4.0",
+        "symfony/yaml": "^3.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Mogita\\DocBuilder\\": "src/"
+        }
+    }
+}
