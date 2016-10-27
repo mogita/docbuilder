@@ -194,7 +194,7 @@ class MkDocs {
     private function checkDir() {
         if (!is_dir($this->rootPath)) mkdir($this->rootPath, 0755);
 
-        $srcDir = $this->rootPath . $this->mkDocsConfig['docs_dir'];
+        $srcDir = $this->rootPath . '/' . $this->mkDocsConfig['docs_dir'];
 
         if (!is_dir($srcDir)) {
             // create docs directory
